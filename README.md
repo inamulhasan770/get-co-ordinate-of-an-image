@@ -1,0 +1,1 @@
+# get-co-ordinate-of-an-image
