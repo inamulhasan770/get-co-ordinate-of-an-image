@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="javascript/angularjs.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<h3>mouse over to get the coordinate points</h3>
+<center>
+<img src="1.jpg" width="80%" height="80%" ng-mousemove="myFunc($event)"/>
+</center>
+<h1><p>Coordinates: {{x + ', ' + y}}</p></h1>
+
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.myFunc = function(myE) {
+        $scope.x = myE.clientX;
+        $scope.y = myE.clientY;
+    }
+});
+</script> 
+
+<p>Mouse over the heading to display the value of clientX and clientY from the event object.</p>
+
+</body>
+</html>
